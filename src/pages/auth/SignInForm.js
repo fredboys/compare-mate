@@ -22,7 +22,30 @@ function SignInForm() {
       <Col className="my-auto p-0 p-md-2" md={6}>
         <Container className={`${appStyles.Content} p-4 `}>
           <h1 className={styles.Header}>sign in</h1>
-          {/* Add your form here */}
+          
+            <Form>
+                <Form.Group controlId="username">
+                    <Form.Label className="d-none">Username</Form.Label>
+                    <Form.Control
+                        className={styles.Input}
+                        type="text" 
+                        placeholder="Username" 
+                        name="username" />
+                </Form.Group>
+
+                <Form.Group controlId="password">
+                    <Form.Label className="d-none">Password</Form.Label>
+                    <Form.Control 
+                        className={styles.Input}
+                        type="password" 
+                        placeholder="Password" 
+                        name="password" />
+                </Form.Group>
+
+                <Button className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`} type="submit">
+                    Sign in
+                </Button>
+            </Form>
 
         </Container>
         <Container className={`mt-3 ${appStyles.Content}`}>
@@ -37,7 +60,7 @@ function SignInForm() {
       >
         <Image
           className={`${appStyles.FillerImage}`}
-          src={"https://codeinstitute.s3.amazonaws.com/AdvancedReact/hero.jpg"}
+          src={"https://res.cloudinary.com/drzze0oic/image/upload/v1681051756/signin_fhrjdy.jpg"}
         />
       </Col>
     </Row>
