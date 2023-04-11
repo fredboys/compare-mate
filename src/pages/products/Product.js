@@ -3,13 +3,13 @@ import styles from '../../styles/Product.module.css'
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { Card, Media, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import Avatar from '../../components/Avatar';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { Link } from 'react-router-dom';
+import { axiosRes } from "../../api/axiosDefaults";
 
 const Product = (props) => {
     const {
         id,
         owner,
-        profile_id,
         profile_image,
         comments_count,
         favourite_count,
@@ -25,10 +25,75 @@ const Product = (props) => {
         category_type,
         updated_at,
         productPage,
+        setProduct,
     } = props;
 
     const currentUser = useCurrentUser();
-    const is_owner = currentUser?.username === owner
+    const is_owner = currentUser?.username === owner;
+
+    const handleFavourite = async () => {
+        try {
+          const { data } = await axiosRes.post('/favourite/', { product: id });
+          setProduct((prevProduct) => ({
+            ...prevProduct,
+            results: prevProduct.results.map((product) => {
+              return product.id === id
+                ? { ...product, favourite_count: product.favourite_count + 1, favourite_id: data.id }
+                : product;
+            }),
+          }));
+        } catch (err) {
+          console.log(err);
+        }
+      };
+
+      const handleUnFavourite = async () => {
+        try {
+          await axiosRes.delete(`/favourite/${favourite_id}/`);
+          setProduct((prevProduct) => ({
+            ...prevProduct,
+            results: prevProduct.results.map((product) => {
+              return product.id === id
+                ? { ...product, favourite_count: product.favourite_count - 1, favourite_id: null }
+                : product;
+            }),
+          }));
+        } catch (err) {
+          console.log(err);
+        }
+      };
+
+      const handleUpvote = async () => {
+        try {
+          const { data } = await axiosRes.post('/votes/', { product: id });
+          setProduct((prevProduct) => ({
+            ...prevProduct,
+            results: prevProduct.results.map((product) => {
+              return product.id === id
+                ? { ...product, votes_count: product.votes_count + 1, votes_id: data.id }
+                : product;
+            }),
+          }));
+        } catch (err) {
+          console.log(err);
+        }
+      };
+
+      const handleDownVote = async () => {
+        try {
+          await axiosRes.delete(`/votes/${votes_id}/`);
+          setProduct((prevProduct) => ({
+            ...prevProduct,
+            results: prevProduct.results.map((product) => {
+              return product.id === id
+                ? { ...product, votes_count: product.votes_count - 1, votes_id: null }
+                : product;
+            }),
+          }));
+        } catch (err) {
+          console.log(err);
+        }
+      };
 
     return (
         <Card className={styles.Product}>
@@ -58,22 +123,22 @@ const Product = (props) => {
                     {is_owner ? (
                         <OverlayTrigger
                             placement="top"
-                            overlay={<Tooltip>You can't save your own product!</Tooltip>}
+                            overlay={<Tooltip>You can't favourite your own product!</Tooltip>}
                             >
                             <i className="fa-regular fa-floppy-disk" />
                         </OverlayTrigger>
                         ) : favourite_id ? (
-                            <span onClick={() => {}}>
+                            <span onClick={handleUnFavourite}>
                                 <i className={`fa-regular fa-floppy-disk ${styles.Save}`} />
                             </span>
                         ) : currentUser ? (
-                            <span onClick={() => {}}>
+                            <span onClick={handleFavourite}>
                                 <i className={`fa-regular fa-floppy-disk ${styles.SaveOutline}`} />
                             </span>
                         ) : (
                             <OverlayTrigger
                                 placement="top"
-                                overlay={<Tooltip>Log in to save products!</Tooltip>}
+                                overlay={<Tooltip>Log in to favourite products!</Tooltip>}
                             >
                                 <i className="fa-regular fa-floppy-disk" />
                             </OverlayTrigger>
@@ -93,11 +158,11 @@ const Product = (props) => {
                         <i className="fa-solid fa-up-long" />
                     </OverlayTrigger>
                     ) : votes_id ? (
-                        <span onClick={() => {}}>
+                        <span onClick={handleDownVote}>
                             <i className={`fa-solid fa-up-long ${styles.Save}`} />
                         </span>
                     ) : currentUser ? (
-                        <span onClick={() => {}}>
+                        <span onClick={handleUpvote}>
                             <i className={`fa-solid fa-up-long ${styles.SaveOutline}`} />
                         </span>
                     ) : (
