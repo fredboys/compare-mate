@@ -49,7 +49,7 @@ const Product = (props) => {
 
       const handleUnFavourite = async () => {
         try {
-          await axiosRes.delete(`/favourite/${favourite_id}/`);
+          await axiosRes.delete(`/favourite/${favourite_id}`);
           setProduct((prevProduct) => ({
             ...prevProduct,
             results: prevProduct.results.map((product) => {
@@ -81,7 +81,7 @@ const Product = (props) => {
 
       const handleDownVote = async () => {
         try {
-          await axiosRes.delete(`/votes/${votes_id}/`);
+          await axiosRes.delete(`/votes/${votes_id}`);
           setProduct((prevProduct) => ({
             ...prevProduct,
             results: prevProduct.results.map((product) => {
