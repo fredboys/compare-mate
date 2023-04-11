@@ -29,7 +29,7 @@ const NavBar = () => {
             activeClassName={styles.Active} 
             to="/products/create"
         >
-            <i className='fas fa-plus-square'></i>Add
+            <i className='fas fa-plus-square'></i>Add Product
         </NavLink>    
     )
     const loggedInIcons = <>
@@ -81,11 +81,11 @@ const NavBar = () => {
     )
 
   return (
-    <Navbar expanded={expanded} className={styles.NavBar} expand="md" fixed="top">
+    <Navbar expanded={expanded} className={styles.NavBar} expand="lg" fixed="top">
         <Container>
             <NavLink to="/">
                 <Navbar.Brand>
-                    <img src={logo} alt='logo' height="45"/>
+                    <img src={logo} alt='logo' height="55"/>
                 </Navbar.Brand>
             </NavLink>
             {currentUser && addPostIcon}
