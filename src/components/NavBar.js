@@ -29,7 +29,7 @@ const NavBar = () => {
             activeClassName={styles.Active} 
             to="/products/create"
         >
-            <i className='fas fa-plus-square'></i>Add Product
+            <i className='fas fa-plus-square'></i>Add
         </NavLink>    
     )
     const loggedInIcons = <>
