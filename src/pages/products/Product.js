@@ -14,8 +14,8 @@ const Product = (props) => {
         comments_count,
         favourite_count,
         favourite_id,
-        vote_count,
-        vote_id,
+        votes_count,
+        votes_id,
         name,
         description,
         link,
@@ -61,7 +61,7 @@ const Product = (props) => {
                             overlay={<Tooltip>You can't save your own product!</Tooltip>}
                             >
                             <i className="fa-regular fa-floppy-disk" />
-                            </OverlayTrigger>
+                        </OverlayTrigger>
                         ) : favourite_id ? (
                             <span onClick={() => {}}>
                                 <i className={`fa-regular fa-floppy-disk ${styles.Save}`} />
@@ -73,16 +73,42 @@ const Product = (props) => {
                         ) : (
                             <OverlayTrigger
                                 placement="top"
-                                overlay={<Tooltip>Log in to save posts!</Tooltip>}
+                                overlay={<Tooltip>Log in to save products!</Tooltip>}
                             >
                                 <i className="fa-regular fa-floppy-disk" />
                             </OverlayTrigger>
                         )}
                         {favourite_count}
+
                         <Link to={`/products/${id}`}>
                             <i className="far fa-comments" />
                         </Link>
                         {comments_count}
+
+                    {is_owner ? (
+                    <OverlayTrigger
+                        placement="top"
+                        overlay={<Tooltip>You can't UpVote your own product!</Tooltip>}
+                        >
+                        <i className="fa-solid fa-up-long" />
+                    </OverlayTrigger>
+                    ) : votes_id ? (
+                        <span onClick={() => {}}>
+                            <i className={`fa-solid fa-up-long ${styles.Save}`} />
+                        </span>
+                    ) : currentUser ? (
+                        <span onClick={() => {}}>
+                            <i className={`fa-solid fa-up-long ${styles.SaveOutline}`} />
+                        </span>
+                    ) : (
+                        <OverlayTrigger
+                            placement="top"
+                            overlay={<Tooltip>Log in to UpVote products!</Tooltip>}
+                        >
+                            <i className="fa-solid fa-up-long" />
+                        </OverlayTrigger>
+                    )}
+                    {votes_count}
                 </div>
             </Card.Body>
         </Card>

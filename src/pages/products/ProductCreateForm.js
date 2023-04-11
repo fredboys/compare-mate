@@ -115,7 +115,7 @@ function ProductCreateForm() {
         />
       </Form.Group>
       <Form.Group>
-        <Form.Label>Location</Form.Label>
+        <Form.Label>Location (if in-store)</Form.Label>
         <Form.Control
           type="text"
           name="location"
@@ -123,16 +123,12 @@ function ProductCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
-      {errors?.location?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
       <Form.Group>
         <Form.Label>Price</Form.Label>
         <Form.Control
           type="text"
           name="price"
+          placeholder="no need for the £ sign"
           value={price}
           onChange={handleChange}
         />
