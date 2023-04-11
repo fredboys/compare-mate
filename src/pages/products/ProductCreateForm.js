@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-
+import Alert from "react-bootstrap/Alert";
 import Upload from "../../assets/upload.png";
 
 import styles from "../../styles/PostCreateEditForm.module.css";
@@ -13,6 +13,8 @@ import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Asset from "../../components/Asset";
 import { Image } from "react-bootstrap";
+import { useHistory } from "react-router"
+import { axiosReq } from "../../api/axiosDefaults";
 
 function ProductCreateForm() {
 
@@ -28,6 +30,9 @@ function ProductCreateForm() {
     image: "",
   });
   const { name, description, link, location, price, category, image } = productData;
+
+  const imageInput = useRef(null)
+  const history = useHistory();
 
   const handleChange = (event) => {
     setProductData({
@@ -46,6 +51,29 @@ function ProductCreateForm() {
     }
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+
+    formData.append("name", name);
+    formData.append("description", description);
+    formData.append("link", link);
+    formData.append("location", location);
+    formData.append("price", price);
+    formData.append("category", category);
+    formData.append("image", imageInput.current.files[0]);
+
+    try {
+      const { data } = await axiosReq.post("/products/", formData);
+      history.push(`/products/${data.id}`);
+    } catch (err) {
+      console.log(err);
+      if (err.response?.status !== 401) {
+        setErrors(err.response?.data);
+      }
+    }
+  };
+
   const textFields = (
     <div className="text-center">
       <Form.Group>
@@ -57,6 +85,11 @@ function ProductCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
+      {errors?.name?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <Form.Group>
         <Form.Label>Description</Form.Label>
         <Form.Control
@@ -67,8 +100,13 @@ function ProductCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
+      {errors?.description?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <Form.Group>
-        <Form.Label>Link</Form.Label>
+        <Form.Label>Link (if online)</Form.Label>
         <Form.Control
           type="text"
           name="link"
@@ -85,6 +123,11 @@ function ProductCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
+      {errors?.location?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <Form.Group>
         <Form.Label>Price</Form.Label>
         <Form.Control
@@ -94,6 +137,11 @@ function ProductCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
+      {errors?.price?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <Form.Group>
         <Form.Label>Category</Form.Label>
         <Form.Control
@@ -103,13 +151,17 @@ function ProductCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
-      
+      {errors?.category?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
 
     
     
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
-        onClick={() => {}}
+        onClick={() => history.goBack()}
       >
         cancel
       </Button>
@@ -120,7 +172,7 @@ function ProductCreateForm() {
   );
 
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Row>
         <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
           <Container
@@ -156,8 +208,14 @@ function ProductCreateForm() {
                     id="image-upload"
                     accept="image/*"
                     onChange={handleChangeImage}
+                    ref={imageInput}
                 />
             </Form.Group>
+            {errors?.image?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
             <div className="d-md-none">{textFields}</div>
           </Container>
         </Col>
