@@ -29,7 +29,7 @@ const NavBar = () => {
             activeClassName={styles.Active} 
             to="/products/create"
         >
-            <i className='fas fa-plus-square'></i>Add Product
+            <i className='fas fa-plus-square'></i>Add
         </NavLink>    
     )
     const loggedInIcons = <>
@@ -43,7 +43,7 @@ const NavBar = () => {
         <NavLink 
             className={styles.NavLink} 
             activeClassName={styles.Active} 
-            to="/saved"
+            to="/favourite"
         >
             <i className='fa-regular fa-floppy-disk'></i>Favourite
         </NavLink>
