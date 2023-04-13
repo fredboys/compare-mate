@@ -28,7 +28,7 @@ function ProductsPage({message, filter = "" }) {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const {data} = await axiosReq.get(`/products/?${filter}search=${query}&search=${category}`)
+        const {data} = await axiosReq.get(`/products/?${filter}search=${query}&category_type=${category}`)
         setProduct(data)
         setHasLoaded(true)
       } catch(err) {

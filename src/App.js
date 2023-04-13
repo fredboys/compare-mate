@@ -22,7 +22,7 @@ function App() {
         <Switch>
           <Route exact path="/" render={() => <h1>Home Page</h1>} />
           <Route exact path="/feed" render={() => (
-              <ProductsPage message="No results found. Adjust the search keyword" />
+              <ProductsPage message="No results found. Adjust the search keyword"/>
             )} 
           />
           <Route exact path="/favourite" render={() => (
