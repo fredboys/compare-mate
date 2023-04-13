@@ -9,6 +9,7 @@ import ProductCreateForm from './pages/products/ProductCreateForm';
 import ProductPage from './pages/products/ProductPage';
 import ProductsPage from './pages/products/ProductsPage';
 import { useCurrentUser } from './contexts/CurrentUserContext';
+import ProductEditForm from './pages/products/ProductEditForm';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/products/create" render={() => <ProductCreateForm />} />
           <Route exact path="/products/:id" render={() => <ProductPage />} />
+          <Route exact path="/products/:id/edit" render={() => <ProductEditForm />} />
           <Route render={() => <p>Page Not Found!</p> } />
         </Switch>
       </Container>
