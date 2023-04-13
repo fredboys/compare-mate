@@ -54,24 +54,23 @@ function ProductsPage({message, filter = "" }) {
           onSubmit={(event) => event.preventDefault()}
         >
           <Form.Row>
-            <Col>
-          <Form.Control
-            value={query} 
-            onChange={(event) => setQuery(event.target.value)}
-            type="text" 
-            className="mr-sm-2"
-            placeholder="Search for a product" />
+            <Col sm={6}>
+            <Form.Control
+              value={query} 
+              onChange={(event) => setQuery(event.target.value)}
+              type="text" 
+              placeholder="Search for a product" />
             </Col>
-            <Col>
-          <Form.Control
-            as="select"
-            value={category}
-            onChange={(event) => setCategory(event.target.value)}
-          >
-            <option value="">Filter By</option>
-            <ChoiceDropdown />
-          </Form.Control>
-          </Col>
+            <Col sm={6} className={styles.Category} >
+              <Form.Control
+                as="select"
+                value={category}
+                onChange={(event) => setCategory(event.target.value)}
+              >
+                <option value="">Filter By All</option>
+                <ChoiceDropdown />
+              </Form.Control>
+            </Col>
           </Form.Row>
         </Form>
 
