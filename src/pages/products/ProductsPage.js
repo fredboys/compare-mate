@@ -14,6 +14,8 @@ import Product from "./Product";
 import NoResults from '../../assets/no-results.png'
 import Asset from "../../components/Asset";
 import ChoiceDropdown from "../../components/ChoiceDropdown";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchMoreData } from "../../utils/utils";
 
 function ProductsPage({message, filter = "" }) {
   const [product, setProduct] = useState({ results: [] });
@@ -51,28 +53,42 @@ function ProductsPage({message, filter = "" }) {
         <Form className={styles.SearchBar}
           onSubmit={(event) => event.preventDefault()}
         >
+          <Form.Row>
+            <Col>
           <Form.Control
             value={query} 
             onChange={(event) => setQuery(event.target.value)}
             type="text" 
             className="mr-sm-2"
             placeholder="Search for a product" />
+            </Col>
+            <Col>
           <Form.Control
             as="select"
             value={category}
             onChange={(event) => setCategory(event.target.value)}
           >
-            <option value="">All</option>
+            <option value="">Filter By</option>
             <ChoiceDropdown />
           </Form.Control>
+          </Col>
+          </Form.Row>
         </Form>
 
         {hasLoaded ? (
           <>
             {product.results.length ? (
-              product.results.map(product => (
-                <Product key={product.id} {...product} setProduct={setProduct} />
-              ))
+              <InfiniteScroll
+                children={product.results.map(product => (
+                    <Product key={product.id} {...product} setProduct={setProduct} />
+                  ))
+                }
+                dataLength={product.results.length}
+                loader={<Asset spinner />}
+                hasMore={!!product.next}
+                next={() => fetchMoreData(product, setProduct)}
+              />
+        
             ) : (
               <Container className={appStyles.Content}>
                 <Asset src={NoResults} message={message} />

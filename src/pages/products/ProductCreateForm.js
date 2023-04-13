@@ -62,7 +62,7 @@ function ProductCreateForm() {
     formData.append("link", link);
     formData.append("location", location);
     formData.append("price", price);
-    formData.append("category", category);
+    formData.append("category_type", category);
     formData.append("image", imageInput.current.files[0]);
 
     try {
