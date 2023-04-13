@@ -13,6 +13,7 @@ import Product from "./Product";
 
 import NoResults from '../../assets/no-results.png'
 import Asset from "../../components/Asset";
+import ChoiceDropdown from "../../components/ChoiceDropdown";
 
 function ProductsPage({message, filter = "" }) {
   const [product, setProduct] = useState({ results: [] });
@@ -20,11 +21,12 @@ function ProductsPage({message, filter = "" }) {
   const {pathname} = useLocation();
 
   const [query, setQuery] = useState("");
+  const [category, setCategory] = useState("");
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const {data} = await axiosReq.get(`/products/?${filter}search=${query}`)
+        const {data} = await axiosReq.get(`/products/?${filter}search=${query}&search=${category}`)
         setProduct(data)
         setHasLoaded(true)
       } catch(err) {
@@ -39,7 +41,7 @@ function ProductsPage({message, filter = "" }) {
     return () => {
       clearTimeout(timer);
     }
-  }, [filter, query, pathname])
+  }, [filter, query, category, pathname])
 
   return (
     <Row className="h-100">
@@ -55,6 +57,14 @@ function ProductsPage({message, filter = "" }) {
             type="text" 
             className="mr-sm-2"
             placeholder="Search for a product" />
+          <Form.Control
+            as="select"
+            value={category}
+            onChange={(event) => setCategory(event.target.value)}
+          >
+            <option value="">All</option>
+            <ChoiceDropdown />
+          </Form.Control>
         </Form>
 
         {hasLoaded ? (

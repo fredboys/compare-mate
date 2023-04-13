@@ -15,6 +15,7 @@ import Asset from "../../components/Asset";
 import { Image } from "react-bootstrap";
 import { useHistory } from "react-router"
 import { axiosReq } from "../../api/axiosDefaults";
+import ChoiceDropdown from "../../components/ChoiceDropdown"
 
 function ProductCreateForm() {
 
@@ -35,6 +36,7 @@ function ProductCreateForm() {
   const history = useHistory();
 
   const handleChange = (event) => {
+    console.log(event)
     setProductData({
       ...productData,
       [event.target.name]: event.target.value,
@@ -141,11 +143,14 @@ function ProductCreateForm() {
       <Form.Group>
         <Form.Label>Category</Form.Label>
         <Form.Control
-          type="text"
+          as="select"         
           name="category"
           value={category}
           onChange={handleChange}
-        />
+        >
+          <ChoiceDropdown />
+
+        </Form.Control>
       </Form.Group>
       {errors?.category?.map((message, idx) => (
         <Alert variant="warning" key={idx}>

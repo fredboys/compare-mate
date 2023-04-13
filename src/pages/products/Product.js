@@ -125,22 +125,32 @@ const Product = (props) => {
                             placement="top"
                             overlay={<Tooltip>You can't favourite your own product!</Tooltip>}
                             >
-                            <i className="fa-regular fa-floppy-disk" />
+                            <i className="fa-regular fa-bookmark" />
                         </OverlayTrigger>
                         ) : favourite_id ? (
+                          <OverlayTrigger
+                            placement="top"
+                            overlay={<Tooltip>Unfavourite</Tooltip>}
+                            >
                             <span onClick={handleUnFavourite}>
-                                <i className={`fa-regular fa-floppy-disk ${styles.Save}`} />
+                                <i className={`fa-solid fa-bookmark ${styles.Save}`} />
                             </span>
+                          </OverlayTrigger>
                         ) : currentUser ? (
+                          <OverlayTrigger
+                            placement="top"
+                            overlay={<Tooltip>Favourite</Tooltip>}
+                            >
                             <span onClick={handleFavourite}>
-                                <i className={`fa-regular fa-floppy-disk ${styles.SaveOutline}`} />
+                                <i className={`fa-regular fa-bookmark ${styles.SaveOutline}`} />
                             </span>
+                          </OverlayTrigger>
                         ) : (
                             <OverlayTrigger
                                 placement="top"
                                 overlay={<Tooltip>Log in to favourite products!</Tooltip>}
                             >
-                                <i className="fa-regular fa-floppy-disk" />
+                                <i className="fa-regular fa-bookmark" />
                             </OverlayTrigger>
                         )}
                         {favourite_count}
@@ -153,24 +163,34 @@ const Product = (props) => {
                     {is_owner ? (
                     <OverlayTrigger
                         placement="top"
-                        overlay={<Tooltip>You can't UpVote your own product!</Tooltip>}
+                        overlay={<Tooltip>You can't Up Vote your own product!</Tooltip>}
                         >
-                        <i className="fa-solid fa-up-long" />
+                        <i className="fa-regular fa-circle-up" />
                     </OverlayTrigger>
                     ) : votes_id ? (
+                      <OverlayTrigger
+                        placement="top"
+                        overlay={<Tooltip>Down Vote</Tooltip>}
+                        >
                         <span onClick={handleDownVote}>
-                            <i className={`fa-solid fa-up-long ${styles.Save}`} />
+                            <i className={`fa-solid fa-circle-up ${styles.Save}`} />
                         </span>
+                      </OverlayTrigger>
                     ) : currentUser ? (
+                      <OverlayTrigger
+                        placement="top"
+                        overlay={<Tooltip>Up Vote</Tooltip>}
+                        >
                         <span onClick={handleUpvote}>
-                            <i className={`fa-solid fa-up-long ${styles.SaveOutline}`} />
+                            <i className={`fa-regular fa-circle-up ${styles.SaveOutline}`} />
                         </span>
+                      </OverlayTrigger>
                     ) : (
                         <OverlayTrigger
                             placement="top"
                             overlay={<Tooltip>Log in to UpVote products!</Tooltip>}
                         >
-                            <i className="fa-solid fa-up-long" />
+                            <i className="fa-regular fa-circle-up" />
                         </OverlayTrigger>
                     )}
                     {votes_count}
