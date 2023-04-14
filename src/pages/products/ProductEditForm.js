@@ -86,7 +86,7 @@ function ProductEditForm() {
 
     try {
       await axiosReq.put(`/products/${id}/`, formData);
-      history.push(`/products/${id}`);
+      history.push(`/products/${id}/`);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {

@@ -10,6 +10,10 @@ import { axiosReq } from "../../api/axiosDefaults";
 import Product from "./Product";
 import CommentCreateForm from "../comments/CommentCreateForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import Comment from "../comments/Comment";
+import InfiniteScroll from "react-infinite-scroll-component";
+import Asset from "../../components/Asset";
+import { fetchMoreData } from "../../utils/utils";
 
 function ProductPage() {
     const { id } = useParams();
@@ -21,11 +25,12 @@ function ProductPage() {
     useEffect(() => {
         const handleMount = async () => {
           try {
-            const [{ data: product }] = await Promise.all([
+            const [{ data: product }, {data: comments}] = await Promise.all([
               axiosReq.get(`/products/${id}`),
+              axiosReq.get(`/comments/?product=${id}`)
             ]);
             setProduct({ results: [product] });
-            console.log(product);
+            setComments(comments)
           } catch (err) {
             console.log(err);
           }
@@ -51,6 +56,26 @@ function ProductPage() {
           ) : comments.results.length ? (
             "Comments"
           ) : null}
+          {comments.results.length ? (
+            <InfiniteScroll
+              children={comments.results.map((comment) => (
+                <Comment 
+                  key={comment.id} 
+                  {...comment}
+                  setProduct={setProduct}
+                  setComments={setComments} 
+                />
+              ))}
+              dataLength={comments.results.length}
+              loader={<Asset spinner />}
+              hasMore={!!comments.next}
+              next={() => fetchMoreData(comments, setComments)}
+            />
+          ) : currentUser ? (
+            <span>No comments yet, be the first to comment!</span>
+          ) : (
+            <span>No comments... yet</span>
+          )}
         </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
