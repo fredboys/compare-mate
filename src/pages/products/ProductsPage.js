@@ -16,6 +16,7 @@ import Asset from "../../components/Asset";
 import ChoiceDropdown from "../../components/ChoiceDropdown";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
+import TrendingProducts from "../profiles/TrendingProducts";
 
 function ProductsPage({message, filter = "" }) {
   const [product, setProduct] = useState({ results: [] });
@@ -48,7 +49,7 @@ function ProductsPage({message, filter = "" }) {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <p>Upvote trend products mobile</p>
+      <TrendingProducts mobile />
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form className={styles.SearchBar}
           onSubmit={(event) => event.preventDefault()}
@@ -102,7 +103,7 @@ function ProductsPage({message, filter = "" }) {
         )}
       </Col>
       <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
-        <p>Upvote trend products for desktop</p>
+        <TrendingProducts />
       </Col>
     </Row>
   );
