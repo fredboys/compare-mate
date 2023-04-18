@@ -41,7 +41,7 @@ function ProfilePage() {
   }
     fetchData()
   }, [id, setProductData])
-
+  
   const mainProfile = (
     <>
       <Row noGutters className="px-3 text-center">
@@ -61,7 +61,7 @@ function ProfilePage() {
               <div>Votes</div>
             </Col>
             <Col xs={3} className="my-2">
-              <div>{profile?.products_count}</div>
+              <div>{profile?.total_favourite_count}</div>
               <div>Favourites</div>
             </Col>
           </Row>
