@@ -11,7 +11,7 @@ const TrendingProduct = (props) => {
     <div className={`my-3 d-flex align-items-center ${mobile && "flex-column"}`}>
       <div>
         <Link className="align-self-center" to={`/products/${id}`}>
-          <Image src={image} height={imageSize} width={110} styles="object-fit" />
+          <Image src={image} height={imageSize} width={110} className={styles.Image} />
         </Link>
       </div>
         <div className={`mx-2 ${styles.WordBreak}`}>
