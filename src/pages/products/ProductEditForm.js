@@ -163,7 +163,7 @@ function ProductEditForm() {
         <Form.Label>Category</Form.Label>
         <Form.Control
           as="select"         
-          name="category"
+          name="category_type"
           value={category_type}
           onChange={handleChange}
         >
@@ -171,7 +171,7 @@ function ProductEditForm() {
 
         </Form.Control>
       </Form.Group>
-      {errors?.category?.map((message, idx) => (
+      {errors?.category_type?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
