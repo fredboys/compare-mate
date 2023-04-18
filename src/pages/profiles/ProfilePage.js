@@ -8,32 +8,41 @@ import Asset from "../../components/Asset";
 
 import styles from "../../styles/ProfilePage.module.css";
 import appStyles from "../../App.module.css";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
+
 import { Image } from "react-bootstrap";
 import TrendingProducts from "./TrendingProducts";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useProductData, useSetProductData } from "../../contexts/ProductDataContext";
-
+import InfiniteScroll from "react-infinite-scroll-component";
+import Product from "../products/Product";
+import { fetchMoreData } from "../../utils/utils";
+import NoResults from "../../assets/no-results.png";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
-  const currentUser = useCurrentUser();
+  const [profilePosts, setProfilePosts] = useState({ results: [] });
+
   const {id} = useParams(); 
+
   const setProductData = useSetProductData();
   const {pageProfile} = useProductData();
+
   const [profile] = pageProfile.results;
 
   useEffect(() => {
     const fetchData = async () => {
     try {
-      const [{data: pageProfile}] = await Promise.all([
-        axiosReq.get(`/profiles/${id}/`)
-      ])
+      const [{ data: pageProfile }, { data: profilePosts }] =
+        await Promise.all([
+          axiosReq.get(`/profiles/${id}/`),
+          axiosReq.get(`/products/?owner__profile=${id}`),
+        ]);
       setProductData(prevState => ({
         ...prevState,
         pageProfile: {results: [pageProfile]}
       }))
+      setProfilePosts(profilePosts);
       setHasLoaded(true);
     } catch(err){
       console.log(err)
@@ -76,8 +85,24 @@ function ProfilePage() {
   const mainProfilePosts = (
     <>
       <hr />
-      <p className="text-center">Profile owner's posts</p>
+      <p className="text-center">{profile?.owner}'s posts</p>
       <hr />
+      {profilePosts.results.length ? (
+        <InfiniteScroll
+          children={profilePosts.results.map((product) => (
+            <Product key={product.id} {...product} setPosts={setProfilePosts} />
+          ))}
+          dataLength={profilePosts.results.length}
+          loader={<Asset spinner />}
+          hasMore={!!profilePosts.next}
+          next={() => fetchMoreData(profilePosts, setProfilePosts)}
+        />
+      ) : (
+        <Asset
+          src={NoResults}
+          message={`No results found, ${profile?.owner} hasn't posted yet.`}
+        />
+      )}
     </>
   );
 

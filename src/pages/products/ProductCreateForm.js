@@ -16,9 +16,10 @@ import { Image } from "react-bootstrap";
 import { useHistory } from "react-router"
 import { axiosReq } from "../../api/axiosDefaults";
 import ChoiceDropdown from "../../components/ChoiceDropdown"
+import { useRedirect } from "../../hooks/useRedirect";
 
 function ProductCreateForm() {
-
+  useRedirect('loggedOut');
   const [errors, setErrors] = useState({});
 
   const [productData, setProductData] = useState({
