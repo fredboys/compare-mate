@@ -28,7 +28,7 @@ function ProductCreateForm() {
     link: "",
     location: "",
     price: "",
-    category: "",
+    category: "food",
     image: "",
   });
   const { name, description, link, location, price, category, image } = productData;

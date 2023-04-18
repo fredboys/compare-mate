@@ -27,10 +27,10 @@ function ProductEditForm() {
     link: "",
     location: "",
     price: "",
-    category: "",
+    category_type: "",
     image: "",
   });
-  const { name, description, link, location, price, category, image } = productData;
+  const { name, description, link, location, price, category_type, image } = productData;
 
   const imageInput = useRef(null)
   const history = useHistory();
@@ -40,9 +40,9 @@ function ProductEditForm() {
     const handleMount = async () => {
         try {
             const {data} = await axiosReq.get(`/products/${id}/`)
-            const {name, description, link, location, price, category, image, is_owner} = data;
+            const {name, description, link, location, price, category_type, image, is_owner} = data;
 
-            is_owner ? setProductData({name, description, link, location, price, category, image}) : history.push('/')
+            is_owner ? setProductData({name, description, link, location, price, category_type, image}) : history.push('/')
         } catch(err) {
             // console.log(err);
         }
@@ -78,7 +78,7 @@ function ProductEditForm() {
     formData.append("link", link);
     formData.append("location", location);
     formData.append("price", price);
-    formData.append("category_type", category);
+    formData.append("category_type", category_type);
 
     if(imageInput?.current?.files[0]) {
         formData.append("image", imageInput.current.files[0]);
@@ -164,7 +164,7 @@ function ProductEditForm() {
         <Form.Control
           as="select"         
           name="category"
-          value={category}
+          value={category_type}
           onChange={handleChange}
         >
           <ChoiceDropdown />
