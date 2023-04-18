@@ -27,7 +27,7 @@ export const ProductDataProvider = ({ children }) => {
                 popularProducts: data,
             }))
         } catch(err) {
-            console.log(err)
+            // console.log(err)
         }
     }
     handleMount();

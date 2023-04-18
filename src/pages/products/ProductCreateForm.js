@@ -37,7 +37,6 @@ function ProductCreateForm() {
   const history = useHistory();
 
   const handleChange = (event) => {
-    console.log(event)
     setProductData({
       ...productData,
       [event.target.name]: event.target.value,
@@ -70,7 +69,7 @@ function ProductCreateForm() {
       const { data } = await axiosReq.post("/products/", formData);
       history.push(`/products/${data.id}`);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }
