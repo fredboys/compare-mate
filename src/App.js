@@ -11,7 +11,9 @@ import ProductsPage from './pages/products/ProductsPage';
 import { useCurrentUser } from './contexts/CurrentUserContext';
 import ProductEditForm from './pages/products/ProductEditForm';
 import ProfilePage from './pages/profiles/ProfilePage';
-
+import UsernameForm from "./pages/profiles/UsernameForm";
+import UserPasswordForm from "./pages/profiles/UserPasswordForm";
+import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -38,6 +40,21 @@ function App() {
           <Route exact path="/products/:id" render={() => <ProductPage />} />
           <Route exact path="/products/:id/edit" render={() => <ProductEditForm />} />
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
+          <Route
+            exact
+            path="/profiles/:id/edit/username"
+            render={() => <UsernameForm />}
+          />
+          <Route
+            exact
+            path="/profiles/:id/edit/password"
+            render={() => <UserPasswordForm />}
+          />
+          <Route
+            exact
+            path="/profiles/:id/edit"
+            render={() => <ProfileEditForm />}
+          />
           <Route render={() => <p>Page Not Found!</p> } />
         </Switch>
       </Container>
