@@ -1,0 +1,30 @@
+.Content {
+    transform: translateY(40%);
+    margin: auto;
+    text-align: center;
+}
+
+.Content h1 {
+    font-size: 50px;
+    margin-top: 20px;
+}
+
+.Content p {
+    margin: 5px auto;
+    font-weight: 300;
+}
+
+.Link {
+    margin-top: 25px;
+}
+
+.Button {
+    width: 100px;
+    padding: 10px 0;
+    text-align: cetner;
+    margin: 1px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid ;
+    background: transparent;
+}

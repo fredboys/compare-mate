@@ -14,3 +14,19 @@
 .Active i {
     color: #1EBBD7;
 }
+
+.Appear {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .Appear {
+      display: block !important;
+    }
+  }
+
+@media (max-width: 480px) {
+    .Hide {
+      display: none;
+    }
+  }
