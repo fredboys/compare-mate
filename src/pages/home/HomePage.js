@@ -1,6 +1,8 @@
 import React from 'react'
 import { useCurrentUser} from '../../contexts/CurrentUserContext';
 import styles from '../../styles/HomePage.module.css'
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+
 
 const HomePage = () => {
     const currentUser = useCurrentUser();
@@ -12,12 +14,12 @@ const HomePage = () => {
                 <p>With Compare Mate</p>
 
                 <div className={styles.Link}>
-                    <p>Take a look at the feed and get started</p>
-                    <button className={styles.Button}>
+                    <p className={styles.Paragraph}>Take a look at the feed and get started</p>
+                    <Link className={styles.Button} to="/feed">
                     Feed 
-                    </button>
+                    </Link>
                 </div>
-            </div>
+            </div>            
         </>
     )
 
@@ -28,13 +30,13 @@ const HomePage = () => {
                 <p>Here you can find the best deals on products</p>
 
                 <div className={styles.Link}>
-                    <p>Sign up to get started or sign in to get saving</p>
-                    <button className={styles.Button}>
+                    <p className={styles.Paragraph}>Sign up to get started or sign in to get saving</p>
+                    <Link className={styles.Button} to="/signup">
                     Sign Up 
-                    </button>
-                    <button className={styles.Button}>
+                    </Link>
+                    <Link className={styles.Button} to="/signin">
                     Sign In 
-                    </button>
+                    </Link>
                 </div>
             </div>
         </>
