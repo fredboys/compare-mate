@@ -4,6 +4,7 @@ import styles from '../../styles/HomePage.module.css'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 
+
 const HomePage = () => {
     const currentUser = useCurrentUser();
 
@@ -12,14 +13,15 @@ const HomePage = () => {
             <div className={styles.Content}>
                 <h1>TIME TO START SAVING</h1>
                 <h3>With Compare Mate</h3>
-
-                <div className={styles.Link}>
-
-                    <Link className={styles.Button} to="/feed">
-                    Feed 
-                    </Link>
-                </div>
-            </div>     
+                    <div className={styles.Link}>
+                        <Link className={styles.Button} to="/feed">
+                        Feed 
+                        </Link>
+                        <Link className={styles.Button} to="/contact/create">
+                        Contact 
+                        </Link>
+                    </div>
+                </div>     
         </>
     )
 
