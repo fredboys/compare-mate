@@ -11,15 +11,15 @@ const HomePage = () => {
         <>
             <div className={styles.Content}>
                 <h1>TIME TO START SAVING</h1>
-                <p>With Compare Mate</p>
+                <h3>With Compare Mate</h3>
 
                 <div className={styles.Link}>
-                    <p className={styles.Paragraph}>Take a look at the feed and get started</p>
+
                     <Link className={styles.Button} to="/feed">
                     Feed 
                     </Link>
                 </div>
-            </div>            
+            </div>     
         </>
     )
 
@@ -27,10 +27,11 @@ const HomePage = () => {
         <>
             <div className={styles.Content}>
                 <h1>WELCOME TO COMPARE MATE</h1>
-                <p>Here you can find the best deals on products</p>
-
+                <h3>Here you can find the best deals on products</h3>
+                <i className="fa-regular fa-credit-card"></i>
+                <i className="fa-solid fa-coins"></i>
+                <i className="fa-solid fa-sack-dollar"></i>
                 <div className={styles.Link}>
-                    <p className={styles.Paragraph}>Sign up to get started or sign in to get saving</p>
                     <Link className={styles.Button} to="/signup">
                     Sign Up 
                     </Link>
@@ -44,9 +45,16 @@ const HomePage = () => {
 
     return (
         <>
+        <div>
         {currentUser ? loggedInHomePage : loggedOutHomePage}
+        </div>
+
         </>
     )
 }
+
+<script>
+    
+</script>
 
 export default HomePage

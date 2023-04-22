@@ -1,19 +1,29 @@
 .Content {
-    transform: translateY(40%);
+    transform: translateY(30%);
     text-align: center;
 }
 
 .Content h1 {
     font-size: 50px;
     margin-top: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.Content h3 {
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 25px;
 }
 
 .Content p {
-    font-weight: 300;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .Link {
-    margin-top: 25px;
+    margin-top: 15px;
 }
 
 .Button {
@@ -36,3 +46,14 @@
 .Paragraph {
     margin-bottom: 15px;
 }
+
+.Content i {
+    color: #1EBBD7;
+    font-size: 2rem;
+}
+
+@media (max-width: 432px) {
+    .Content h1 {
+      font-size: 34px;
+    }
+  }
