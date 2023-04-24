@@ -52,7 +52,7 @@ const HomePage = () => {
         <div>
         {currentUser ? loggedInHomePage : loggedOutHomePage}
             <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '60px', flexDirection: 'column'}}>
-                <p>Recent Uploads</p>
+                <p className={styles.Recent}>Recent Uploads</p>
                 <Carousel interval={1000}>
                 {popularProducts.results.slice(0,3).map(product => (
                     <Carousel.Item key={product.id}>

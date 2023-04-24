@@ -25,6 +25,10 @@
     margin-top: 15px;
 }
 
+.Recent {
+    font-family: 'Times New Roman', Times, serif;
+}
+
 .Button {
     width: 100px;
     padding: 6px 10px;
