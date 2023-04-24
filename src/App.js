@@ -17,6 +17,7 @@ import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import NotFound from './components/NotFound';
 import HomePage from './pages/home/HomePage';
 import ContactCreateForm from "./pages/contacts/ContactCreateForm";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function App() {
   const currentUser = useCurrentUser();

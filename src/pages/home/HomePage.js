@@ -2,11 +2,14 @@ import React from 'react'
 import { useCurrentUser} from '../../contexts/CurrentUserContext';
 import styles from '../../styles/HomePage.module.css'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
-
+import { Carousel } from 'react-responsive-carousel';
+import upload from '../../assets/upload.png'
+import { useProductData } from '../../contexts/ProductDataContext';
 
 
 const HomePage = () => {
     const currentUser = useCurrentUser();
+    const {popularProducts} = useProductData()
 
     const loggedInHomePage = (
         <>
@@ -21,6 +24,9 @@ const HomePage = () => {
                         Contact 
                         </Link>
                     </div>
+                    <Carousel>
+                        <img src={upload} />
+                    </Carousel>
                 </div>     
         </>
     )
@@ -41,7 +47,7 @@ const HomePage = () => {
                     Sign In 
                     </Link>
                 </div>
-            </div>
+                </div>
         </>
     )
 
@@ -49,6 +55,16 @@ const HomePage = () => {
         <>
         <div>
         {currentUser ? loggedInHomePage : loggedOutHomePage}
+            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '12px'}}>
+                <Carousel autoPlay={true} interval={1000} infiniteLoop={true}>
+                {popularProducts.results.slice(0,3).map(product => (
+                        <img  style={{maxHeight: '150px', objectFit: 'contain'}} src={product.image} key={product.id} />
+                    ))}
+                    {/* <img style={{maxHeight: '150px'}} src={upload} />
+                    <img style={{maxHeight: '150px'}} src={upload} />
+                    <img style={{maxHeight: '150px'}} src={upload} /> */}
+                </Carousel>
+            </div>   
         </div>
 
         </>
