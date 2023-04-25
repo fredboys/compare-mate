@@ -25,13 +25,13 @@ export const ProductDataProvider = ({ children }) => {
             setProductData(prevState => ({
                 ...prevState,
                 popularProducts: data,
-            }))
+            }));
         } catch(err) {
             // console.log(err)
         }
-    }
+    };
     handleMount();
-}, [currentUser])
+}, [currentUser]);
 
 return (
     <ProductDataContext.Provider value={productData}>

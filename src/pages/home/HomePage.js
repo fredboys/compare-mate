@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import { useCurrentUser} from '../../contexts/CurrentUserContext';
-import styles from '../../styles/HomePage.module.css'
+import styles from '../../styles/HomePage.module.css';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { Carousel } from 'react-bootstrap';
 import { useProductData } from '../../contexts/ProductDataContext';
@@ -8,7 +8,7 @@ import { useProductData } from '../../contexts/ProductDataContext';
 
 const HomePage = () => {
     const currentUser = useCurrentUser();
-    const {popularProducts} = useProductData()
+    const {popularProducts} = useProductData();
 
     const loggedInHomePage = (
         <>

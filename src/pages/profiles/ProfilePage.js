@@ -42,15 +42,15 @@ function ProfilePage() {
       setProductData(prevState => ({
         ...prevState,
         pageProfile: {results: [pageProfile]}
-      }))
+      }));
       setProfilePosts(profilePosts);
       setHasLoaded(true);
     } catch(err){
       // console.log(err)
     }
-  }
-    fetchData()
-  }, [id, setProductData])
+  };
+    fetchData();
+  }, [id, setProductData]);
   
   const mainProfile = (
     <>

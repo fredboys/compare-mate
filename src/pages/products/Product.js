@@ -1,5 +1,5 @@
-import React from 'react'
-import styles from '../../styles/Product.module.css'
+import React from 'react';
+import styles from '../../styles/Product.module.css';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import Card from "react-bootstrap/Card";
 import Media from "react-bootstrap/Media";
@@ -56,8 +56,7 @@ const Product = (props) => {
           setProduct((prevProduct) => ({
             ...prevProduct,
             results: prevProduct.results.map((product) => {
-              return product.id === id
-                ? { ...product, favourite_count: product.favourite_count + 1, favourite_id: data.id }
+              return product.id === id ? { ...product, favourite_count: product.favourite_count + 1, favourite_id: data.id }
                 : product;
             }),
           }));
@@ -88,8 +87,7 @@ const Product = (props) => {
           setProduct((prevProduct) => ({
             ...prevProduct,
             results: prevProduct.results.map((product) => {
-              return product.id === id
-                ? { ...product, votes_count: product.votes_count + 1, votes_id: data.id }
+              return product.id === id ? { ...product, votes_count: product.votes_count + 1, votes_id: data.id }
                 : product;
             }),
           }));
@@ -104,8 +102,7 @@ const Product = (props) => {
           setProduct((prevProduct) => ({
             ...prevProduct,
             results: prevProduct.results.map((product) => {
-              return product.id === id
-                ? { ...product, votes_count: product.votes_count - 1, votes_id: null }
+              return product.id === id ? { ...product, votes_count: product.votes_count - 1, votes_id: null }
                 : product;
             }),
           }));

@@ -31,11 +31,11 @@ function ProductPage() {
               axiosReq.get(`/comments/?product=${id}`)
             ]);
             setProduct({ results: [product] });
-            setComments(comments)
+            setComments(comments);
           } catch (err) {
             // console.log(err);
           }
-        }
+        };
 
         handleMount();
     }, [id]);

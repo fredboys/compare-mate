@@ -11,7 +11,7 @@ import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import Product from "./Product";
 
-import NoResults from '../../assets/no-results.png'
+import NoResults from '../../assets/no-results.png';
 import Asset from "../../components/Asset";
 import ChoiceDropdown from "../../components/ChoiceDropdown";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -31,22 +31,22 @@ function ProductsPage({message, filter = "" }) {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const {data} = await axiosReq.get(`/products/?${filter}search=${query}&category_type=${category}`)
-        setProduct(data)
-        setHasLoaded(true)
+        const {data} = await axiosReq.get(`/products/?${filter}search=${query}&category_type=${category}`);
+        setProduct(data);
+        setHasLoaded(true);
       } catch(err) {
         // console.log(err)
       }
-    }
+    };
 
-    setHasLoaded(false)
+    setHasLoaded(false);
     const timer = setTimeout(() => {
       fetchProducts();
-    }, 1000)
+    }, 1000);
     return () => {
       clearTimeout(timer);
-    }
-  }, [filter, query, category, pathname, currentUser])
+    };
+  }, [filter, query, category, pathname, currentUser]);
 
   return (
     <Row className="h-100">

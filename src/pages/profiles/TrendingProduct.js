@@ -1,5 +1,5 @@
-import React from 'react'
-import styles from "../../styles/Trending.module.css"
+import React from 'react';
+import styles from "../../styles/Trending.module.css";
 import { Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 

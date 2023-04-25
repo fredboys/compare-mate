@@ -12,9 +12,9 @@ import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
 import { Image } from "react-bootstrap";
-import { useHistory } from "react-router"
+import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
-import ChoiceDropdown from "../../components/ChoiceDropdown"
+import ChoiceDropdown from "../../components/ChoiceDropdown";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 function ProductEditForm() {
@@ -32,24 +32,24 @@ function ProductEditForm() {
   });
   const { name, description, link, location, price, category_type, image } = productData;
 
-  const imageInput = useRef(null)
+  const imageInput = useRef(null);
   const history = useHistory();
   const {id} = useParams();
 
   useEffect(() => {
     const handleMount = async () => {
         try {
-            const {data} = await axiosReq.get(`/products/${id}/`)
+            const {data} = await axiosReq.get(`/products/${id}/`);
             const {name, description, link, location, price, category_type, image, is_owner} = data;
 
-            is_owner ? setProductData({name, description, link, location, price, category_type, image}) : history.push('/')
+            is_owner ? setProductData({name, description, link, location, price, category_type, image}) : history.push('/');
         } catch(err) {
             // console.log(err);
         }
     };
 
     handleMount();
-  }, [history, id])
+  }, [history, id]);
 
   const handleChange = (event) => {
     // console.log(event)

@@ -192,9 +192,13 @@ When running my CSS code through the [CSS Validation](https://jigsaw.w3.org/css-
 
 ## Eslint
 
-Eslint was installed and configured locally. After running, one warning appeared about react version not specified but no errors were logged.
+Eslint was installed and configured locally. No problems were detected in the Problems tab of the terminal when going through the JS files
 
-![Eslint validator]()
+## JSHint
+
+JSHint was used to test my JavaScript files. When run there was no errors. Warnings were shown but they were only to do with missing semi colons. All of these warnings have been fixed. The other warnings were to do with ES versions which is not an issue and have been ignored.
+
+![JSHint validator example](/readme/comparemate-jshint.jpg)
 
 ## Responsive
 
@@ -365,7 +369,8 @@ There are no current bugs I have found at the time of testing
 * "react-responsive-carousel": "3.2.21",
 * "react-router-dom": "^5.3.0",
 * "react-scripts": "^4.0.3",
-* "web-vitals": "^1.1.2"
+* "web-vitals": "^1.1.2",
+* "eslint": "^7.32.0",
 
 # Deployment 
 

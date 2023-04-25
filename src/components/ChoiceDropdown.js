@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const ChoiceDropdown = () => {
     const types = {
@@ -12,7 +12,7 @@ const ChoiceDropdown = () => {
         "household": "Household",
         "homeware": "Homeware",
         "other": "Other"
-    }
+    };
   return (
     <>
       {Object.keys(types).map((item) => (

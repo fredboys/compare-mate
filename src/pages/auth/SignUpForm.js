@@ -17,7 +17,7 @@ import { useRedirect } from "../../hooks/useRedirect";
 
 
 const SignUpForm = () => {
-    useRedirect('loggedIn')
+    useRedirect('loggedIn');
     const[signUpData, setSignUpData] = useState({
         username: "",
         password1: "",
@@ -25,7 +25,7 @@ const SignUpForm = () => {
     });
     const { username, password1, password2 } = signUpData;
 
-    const [errors, setErrors] = useState({})
+    const [errors, setErrors] = useState({});
 
     const history = useHistory();
 
@@ -39,12 +39,12 @@ const SignUpForm = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            await axios.post('/dj-rest-auth/registration/', signUpData)
+            await axios.post('/dj-rest-auth/registration/', signUpData);
             history.push("/signin");
         } catch(err){
-            setErrors(err.response?.data)
+            setErrors(err.response?.data);
         }
-    }
+    };
 
   return (
     <Row className={styles.Row}>
