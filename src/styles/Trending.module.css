@@ -2,6 +2,6 @@
     word-break: break-all;
   }
 
-  .Image {
-    object-fit: contain;
-  }
+.Image {
+  object-fit: contain;
+}

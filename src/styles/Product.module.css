@@ -6,19 +6,19 @@
     text-align: center;
   }
   
-  .Product figure,
-  h5 {
-    margin: 0 0;
-  }
-  
-  .Save {
-    color: #1EBBD7;
-  }
-  
-  .Save:hover {
-    color: #1EBBD7;
-  }
-  
-  .SaveOutline:hover {
-    color: #1EBBD7;
-  }
+.Product figure,
+h5 {
+  margin: 0 0;
+}
+
+.Save {
+  color: #1EBBD7;
+}
+
+.Save:hover {
+  color: #1EBBD7;
+}
+
+.SaveOutline:hover {
+  color: #1EBBD7;
+}

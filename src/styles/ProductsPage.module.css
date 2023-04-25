@@ -5,19 +5,19 @@
     margin-bottom: 16px;
   }
   
-  .SearchIcon {
-    position: absolute;
-    font-size: 1.2rem;
-    padding: 9px;
-    padding-left: 15px;
-    z-index: 1;
-  }
-  
-  .SearchIcon:hover {
-    cursor: default;
-    color: #cfced3;
-  }
+.SearchIcon {
+  position: absolute;
+  font-size: 1.2rem;
+  padding: 9px;
+  padding-left: 15px;
+  z-index: 1;
+}
 
-  .Category {
-    margin-bottom: 10px;
-  }
+.SearchIcon:hover {
+  cursor: default;
+  color: #cfced3;
+}
+
+.Category {
+  margin-bottom: 10px;
+}

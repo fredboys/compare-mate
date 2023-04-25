@@ -54,9 +54,9 @@ const HomePage = () => {
             <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '60px', flexDirection: 'column'}}>
                 <p className={styles.Recent}>Trending Products</p>
                 <Carousel interval={1000}>
-                {popularProducts.results.slice(0,3).map(product => (
+                {popularProducts.results.slice(0,6).map(product => (
                     <Carousel.Item key={product.id}>
-                        <img  style={{maxHeight: '150px', objectFit: 'contain'}} src={product.image} key={product.id} />
+                        <img  style={{maxHeight: '150px', objectFit: 'contain'}} src={product.image} key={product.id} alt='trending product' />
                     </Carousel.Item>
                     ))}
                 </Carousel>

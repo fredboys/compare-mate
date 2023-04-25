@@ -144,6 +144,72 @@ Contact Page -
 
 ![Contact](/readme/Contact-cm.jpg)
 
+# Testing
+
+## Lighthouse
+
+The application has been tested with Chrome Dev Tools Lighthouse Testing which tests the application for:
+
+* Performance
+* Accessibility
+* Best Practices
+* SEO
+
+On some pages the performace score was slightly low however this is to be expected with so many images. This could be improved in the future by compressing images before uploading them. Unfortunately, I did not have time to implement this functionality in this iteration.
+
+## Home Page
+
+![Home page lighthouse](/readme/lighthouse-home.jpg)
+
+## Feed Page
+
+![Feed Page lighthouse](/readme/lighthouse-feed.jpg)
+
+## Favourite Page
+
+![Favourite Page lighthouse](/readme/lighthouse-favourite.jpg)
+
+## Profile Page
+
+![Profile Page lighthouse](/readme/lighthouse-profile.jpg)
+
+## Contact Page
+
+![Contact page lighthouse](/readme/lighthouse-contact.jpg)
+
+## Create Product Page
+
+![Creat product page](/readme/lighthouse-product.jpg)
+
+## Product Page
+
+![Product Page](/readme/lighthouse-productpage.jpg)
+
+## CSS Validator
+
+When running my CSS code through the [CSS Validation](https://jigsaw.w3.org/css-validator/) service I had no bugs.
+
+![CSS Validator](/readme/cssvalidator.jpg)
+
+## Eslint
+
+Eslint was installed and configured locally. After running, one warning appeared about react version not specified but no errors were logged.
+
+![Eslint validator]()
+
+# Security Features
+
+# Bugs
+
+## Solved
+
+A bug I found through testing was I didnt use the correct attribute when defining the model class for the product. I originally used an IntegerField, which meant the user could enter a decimal if the price was a round number. This was an easy fix as I just had to change it to a DecimalField and set the decimal_places to 2.
+
+Another bug I encountered was when I was working on my category search. I had the wrong query search in the URL where I was fetching the data from. It needed to be '&category_type=${category}'. This was causing the category filter to not work correctly as it was filtering by name, description and category. I needed just category.
+
+## Left to solve
+
+There are no current bugs I have found at the time of testing
 
 # Technology Used
 
