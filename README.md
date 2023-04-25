@@ -143,3 +143,92 @@ Sign Up -
 Contact Page - 
 
 ![Contact](/readme/Contact-cm.jpg)
+
+
+# Technology Used
+
+* React
+    * Main framework used to create the user interface
+* Node
+    * Package manager used to install dependencies
+* Eslint
+    * Linting tool used in order to check best practice coding standards
+* Heroku
+    * Used for application hosting
+* ReactBootstrap
+    * Used for styling
+* Git
+    * Version control software
+* Github
+    * Repository used to store base code and docs
+
+# Packages
+
+* "axios": "^0.21.4",
+* "bootstrap": "^4.6.0",
+* "jwt-decode": "^3.1.2",
+* "react": "^17.0.2",
+* "react-bootstrap": "^1.6.3",
+* "react-dom": "^17.0.2",
+* "react-infinite-scroll-component": "^6.1.0",
+* "react-responsive-carousel": "3.2.21",
+* "react-router-dom": "^5.3.0",
+* "react-scripts": "^4.0.3",
+* "web-vitals": "^1.1.2"
+
+# Deployment 
+
+## Heroku
+
+* The site was deployed to Heroku. The steps to deploy are as follows:
+* Navigate to heroku and create an account
+* Click the new button in the top right corner
+* Select create new app
+* Enter app name
+* Select region and click create app
+* Click the resources tab and search for Heroku Postgres
+* Select hobby dev and continue
+* Click the deploy tab
+* Scroll down to Connect to GitHub and sign in / authorize when prompted
+* In the search box, find the repositoy you want to deploy and click connect
+* Scroll down to Manual deploy and choose the main branch
+* Click deploy
+
+## Locally
+
+Navigate to the GitHub Repository you want to clone to use locally:
+
+* Click on the code drop down button
+* Click on HTTPS
+* Copy the repository link to the clipboard
+* Open your IDE of choice (git must be installed for the next steps)
+* Type git clone copied-git-url into the IDE terminal
+
+The project will now have been cloned on your local machine for use.
+
+Install Dependencies:
+
+* nvm install 16
+* nvm use 16
+
+Run Application:
+
+* npm start
+
+## Fork 
+
+* Most commonly, forks are used to either propose changes to someone else's project or to use someone else's project as a starting point for your own idea.
+* Navigate to the GitHub Repository you want to fork.
+* On the top right of the page under the header, click the fork button.
+* This will create a duplicate of the full project in your GitHub Repository.
+
+# Credits
+
+## Code 
+
+Image carousel for the home page was created with help using - [React responsice carousel](https://www.npmjs.com/package/react-responsive-carousel?fbclid=IwAR1lRdK_fVD_9qm55QXE0KN7H4yUqw_cLnSUv5_zk9QRIwriizKYC5KZWj8)
+
+
+## Acknowledgements
+
+Thank you to myy mentor Daisy for helping me along the way and tutor support team
