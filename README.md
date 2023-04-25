@@ -40,7 +40,6 @@ Compare mate is a photo sharing platform where users can see deals on products t
     * [CSS Validator](#css-validator)
     * [Eslint](#eslint)
     * [Responsive](#responsive)
-    * [Defects](#defects)
     * [Manual](#manual)
 * [Security Features](#security-features)
 * [Bugs](#bugs)
@@ -197,7 +196,29 @@ Eslint was installed and configured locally. After running, one warning appeared
 
 ![Eslint validator]()
 
+## Responsive
+
+All pages have been tested for responsiveness using chrome dev tools. I have checked all pages at all key breakpoints to make sure the layout remains user friendly and nothing clashes.
+
+## Manual
+
+I manually tested all buttons, forms and links to make sure the correct action took place. Here are tables to show the testing
+
+### Nav Bar wehn logged out
+
+| What is being tested |  Whats supposed to happen  | Pass/Fail |
+|:-----|:--------:|------:|
+| Logo   | Takes you to the home page | PASS |
+| sign in link   |  Takes you to the sign in page  |   PASS |
+| sign up link   | Takes you to the sign up page |    PASS |
+
 # Security Features
+
+* Users can not deduce any urls that is not related to their profile. They will get a custom 404 Not Found page.
+
+* Error messages for incorrect inputs on product create form
+
+* Error messages for incorrect inputs on sign in/sign up form
 
 # Bugs
 
