@@ -204,13 +204,117 @@ All pages have been tested for responsiveness using chrome dev tools. I have che
 
 I manually tested all buttons, forms and links to make sure the correct action took place. Here are tables to show the testing
 
-### Nav Bar wehn logged out
+### Nav Bar when logged out
 
 | What is being tested |  Whats supposed to happen  | Pass/Fail |
 |:-----|:--------:|------:|
 | Logo   | Takes you to the home page | PASS |
 | sign in link   |  Takes you to the sign in page  |   PASS |
 | sign up link   | Takes you to the sign up page |    PASS |
+
+### Nav Bar when logged in
+
+| What is being tested |  Whats supposed to happen  | Pass/Fail |
+|:-----|:--------:|------:|
+| Logo   | Takes you to the home page | PASS |
+| add product   |  Takes you to the create product form  |   PASS |
+| feed   | Takes you to the feed page |    PASS |
+| favourite   | Takes you to the favourite page |    PASS |
+| sign out   | sign out user and goes home page |    PASS |
+| profile   | Takes you to the profile page |    PASS |
+
+### Home page when logged out
+
+| What is being tested |  Whats supposed to happen  | Pass/Fail |
+|:-----|:--------:|------:|
+| sign in button   | Takes you to the sign in page | PASS |
+| sign up button   |  Takes you to the sign sign up page  |   PASS |
+
+### Home page when logged in
+
+| What is being tested |  Whats supposed to happen  | Pass/Fail |
+|:-----|:--------:|------:|
+| feed button   | Takes you to the feed page | PASS |
+| contact   |  Takes you to the contact  |   PASS |
+
+### Add product form
+
+| What is being tested |  Whats supposed to happen  | Pass/Fail |
+|:-----|:--------:|------:|
+| image   | uploads image preview | PASS |
+| name   |  types input out  |   PASS |
+| link   | types input out |    PASS |
+| location   | types input out |    PASS |
+| price   | types input out |    PASS |
+| category   | dropdown works |    PASS |
+| cancel button   | removes all input |    PASS |
+| post button   | posts product to feed |    PASS |
+
+### Feed Page
+
+| What is being tested |  Whats supposed to happen  | Pass/Fail |
+|:-----|:--------:|------:|
+| search keyword filter   | filter out products from input | PASS |
+| category filter   |  filter out product by category  |   PASS |
+| profile image   | takes you to the product page |    PASS |
+| favourite button   | increases increment and adds to favourite |    PASS |
+| comment button   | opens product page and allows to comment |    PASS |
+| vote button   | increases increment and highlights |    PASS |
+| cancel button   | removes all input |    PASS |
+| trending product image   | takes you to the product page |    PASS |
+
+### Favourite Page
+
+| What is being tested |  Whats supposed to happen  | Pass/Fail |
+|:-----|:--------:|------:|
+| search keyword filter   | filter out products from input | PASS |
+| category filter   |  filter out product by category  |   PASS |
+| profile image   | takes you to the product page |    PASS |
+| favourite button   | increases increment and adds to favourite |    PASS |
+| comment button   | opens product page and allows to comment |    PASS |
+| vote button   | increases increment and highlights |    PASS |
+| cancel button   | removes all input |    PASS |
+| trending product image   | takes you to the product page |    PASS |
+
+### Profile page
+
+| What is being tested |  Whats supposed to happen  | Pass/Fail |
+|:-----|:--------:|------:|
+| three dots   | opens dropdown choice | PASS |
+| edit profile button   |  Takes you to the edit profile page  |   PASS |
+| username button  | allows you to change username | PASS |
+| password button   |  allows you to change password  |   PASS |
+| product image   |  takes you to product page  |   PASS |
+
+### Product page
+
+| What is being tested |  Whats supposed to happen  | Pass/Fail |
+|:-----|:--------:|------:|
+| three dots   | opens dropdown choice | PASS |
+| edit button   |  Takes you to the edit product page  |   PASS |
+| delete button  | deletes the product | PASS |
+| comment input   |  allows you to write comment  |   PASS |
+| post button   |  posts comment to feed  |   PASS |
+
+### Comment section
+
+| What is being tested |  Whats supposed to happen  | Pass/Fail |
+|:-----|:--------:|------:|
+| three dots   | opens dropdown choice | PASS |
+| edit button   |  Allows you to edit comment  |   PASS |
+| delete button  | allows you to delete comment | PASS |
+| cancel button   |  cancel changes  |   PASS |
+| save button   |  update comment  |   PASS |
+
+### Contact form
+
+| What is being tested |  Whats supposed to happen  | Pass/Fail |
+|:-----|:--------:|------:|
+| reason input   | allow user to write input | PASS |
+| details input   |  Allow user to write input  |   PASS |
+| cancel button  | allows you to cancel input | PASS |
+| send button   |  sends contact form  |   PASS |
+
 
 # Security Features
 
