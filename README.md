@@ -168,6 +168,8 @@ This is the sign in form. The user gets taken to this page after they click the 
 
 This is the sign up form. The user gets taken to this page after they click the sign up link. The user in prompted with 3 simple inputs to sign up with. The user gets error feedback if they enter inputs that dont meet the requirements. There is also a link to the sign in page if thats where they need to go.
 
+![Sign up page](/readme/signup-feature.jpg)
+
 ## Home Page Content
 
 This is the home page for logged in users. They are greeted with a message and two simple buttons. A feed button to take the user to the feed page to view all products and a contact button too contact the site owners. Also there is a image carousel which displays the trending products on the website. The user can easily navigate the page as its a clean, simple but effective layout. Its straight to the point and easily understandable.
