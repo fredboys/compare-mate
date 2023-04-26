@@ -11,6 +11,9 @@ const ChoiceDropdown = () => {
         "footwear": "Footwear",
         "household": "Household",
         "homeware": "Homeware",
+        "jewellery": "Jewellery",
+        "diy": "DIY",
+        "accessories": "Accessories",
         "other": "Other"
     };
   return (
