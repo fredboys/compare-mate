@@ -18,12 +18,14 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import TrendingProducts from "../profiles/TrendingProducts";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { useRedirect } from "../../hooks/useRedirect";
 
 function ProductsPage({message, filter = "" }) {
   const [product, setProduct] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const {pathname} = useLocation();
   const currentUser = useCurrentUser();
+  useRedirect('loggedOut');
 
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("");

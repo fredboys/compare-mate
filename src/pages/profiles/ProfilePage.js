@@ -19,10 +19,13 @@ import Product from "../products/Product";
 import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/no-results.png";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
+import { useRedirect } from "../../hooks/useRedirect";
+
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [profilePosts, setProfilePosts] = useState({ results: [] });
+  useRedirect('loggedOut');
 
   const {id} = useParams(); 
 
