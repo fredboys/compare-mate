@@ -19,7 +19,6 @@ Compare mate is a photo sharing platform where users can see deals on products t
     * [Navigation Bar](#navigation-bar)
     * [Sign Up](#sign-up)
     * [Sign In](#sign-in)
-    * [Sign Out](#sign-out)
     * [Home Page content](#home-page-content)
     * [Contact Form](#contact-form)
     * [Image Carousel](#image-carousel)
@@ -142,6 +141,54 @@ Sign Up -
 Contact Page - 
 
 ![Contact](/readme/Contact-cm.jpg)
+
+# Features
+
+## Navigation bar
+
+This is the navigation bar when a user is logged in. It allows the user to access all parts of the webpage with just a single click. It has a nice contrasting colour between the background colour and the text colour. When the user hovers over the text and icons, there will be a change in colour which will notify the user that it is a clickable link. When already on a page, the icon for that page will stay highlighted.
+
+![Navigation bar](/readme/navbar-in.jpg)
+
+This is the navigation bar when a user is logged out. All aspects of the nav bar are the same apart from where the user can go. Only the home, sign in and sign up pages.
+
+![Navigation bar logged out](/readme/navbar-out.jpg)
+
+This is the navigation bar when in smaller screen sizes. The links get contained in a burger menu which produces a really clean design.
+
+![Navbar mobile](/readme/navbar-mobile.jpg)
+
+## Sign In
+
+This is the sign in form. The user gets taken to this page after they click the sign in link or after they register an account. The user in prompted with 2 simple inputs to sign in with. The user gets error feedback if they enter the incorrect inputs. There is also a link to the sign up page if thats where they need to go.
+
+![Sign in page](/readme/signin-feature.jpg)
+
+## Sign Up
+
+This is the sign up form. The user gets taken to this page after they click the sign up link. The user in prompted with 3 simple inputs to sign up with. The user gets error feedback if they enter inputs that dont meet the requirements. There is also a link to the sign in page if thats where they need to go.
+
+## Home Page Content
+
+This is the home page for logged in users. They are greeted with a message and two simple buttons. A feed button to take the user to the feed page to view all products and a contact button too contact the site owners. Also there is a image carousel which displays the trending products on the website. The user can easily navigate the page as its a clean, simple but effective layout. Its straight to the point and easily understandable.
+
+![Home page](/readme/home-feature.jpg)
+
+This is the home page when logged out. It has the same layout with different greeting messages and buttons. These buttons direct the user to the neccessary pages to begin accessing the full site.
+
+![Home page logged out](/readme/homeout-feature.jpg)
+
+## Contact Form
+
+This is the contact form page. From here users are given 2 simple inputs for them to fill out if they would like to contact the site owner. The cancel button will cancel their inputs and the send button will send their message.
+
+![Contact form](/readme/contact-feature.jpg)
+
+## Image carousel
+
+This is a image carousel. This displays the top 6 trending products across the site. They are determined by the amount of votes they have recieved on their post.
+
+![Image carousel](/readme/carousel-feature.jpg)
 
 # Testing
 
