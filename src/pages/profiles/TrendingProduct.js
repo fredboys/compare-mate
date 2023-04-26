@@ -15,7 +15,7 @@ const TrendingProduct = (props) => {
         </Link>
       </div>
         <div className={`mx-2 ${styles.WordBreak}`}>
-          <strong>{name}</strong>
+          <strong >{name}</strong>
           <br />
           <strong>£{price}</strong>
         </div>
