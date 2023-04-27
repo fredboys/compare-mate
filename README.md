@@ -351,6 +351,8 @@ When running my CSS code through the [CSS Validation](https://jigsaw.w3.org/css-
 
 Eslint was installed and configured locally. No problems were detected in the Problems tab of the terminal when going through the JS files
 
+![ESlint test](/readme/eslint-test.jpg)
+
 ## JSHint
 
 JSHint was used to test my JavaScript files. When run there was no errors. Warnings were shown but they were only to do with missing semi colons. All of these warnings have been fixed. The other warnings were to do with ES versions which is not an issue and have been ignored.
