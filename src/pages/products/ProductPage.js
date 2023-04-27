@@ -32,9 +32,7 @@ function ProductPage() {
             ]);
             setProduct({ results: [product] });
             setComments(comments);
-          } catch (err) {
-            // console.log(err);
-          }
+          } catch (err) {}
         };
 
         handleMount();

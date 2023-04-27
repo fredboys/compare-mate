@@ -22,9 +22,7 @@ const NavBar = () => {
             await axios.post('dj-rest-auth/logout/');
             setCurrentUser(null);
             removeTokenTimestamp();
-        } catch(err) {
-            // console.log(err);
-        }
+        } catch(err) {}
     };
 
     const addPostIcon = (

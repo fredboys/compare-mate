@@ -45,9 +45,7 @@ const Product = (props) => {
       try {
         await axiosRes.delete(`/products/${id}/`);
         history.goBack();
-      } catch (err) {
-        // console.log(err);
-      }
+      } catch (err) {}
     };
 
     const handleFavourite = async () => {
@@ -60,9 +58,7 @@ const Product = (props) => {
                 : product;
             }),
           }));
-        } catch (err) {
-          // console.log(err);
-        }
+        } catch (err) {}
       };
 
       const handleUnFavourite = async () => {
@@ -76,9 +72,7 @@ const Product = (props) => {
                 : product;
             }),
           }));
-        } catch (err) {
-          // console.log(err);
-        }
+        } catch (err) {}
       };
 
       const handleUpvote = async () => {
@@ -91,9 +85,7 @@ const Product = (props) => {
                 : product;
             }),
           }));
-        } catch (err) {
-          // console.log(err);
-        }
+        } catch (err) {}
       };
 
       const handleDownVote = async () => {
@@ -106,9 +98,7 @@ const Product = (props) => {
                 : product;
             }),
           }));
-        } catch (err) {
-          // console.log(err);
-        }
+        } catch (err) {}
       };
 
     return (

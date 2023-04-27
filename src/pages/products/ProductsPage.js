@@ -36,9 +36,7 @@ function ProductsPage({message, filter = "" }) {
         const {data} = await axiosReq.get(`/products/?${filter}search=${query}&category_type=${category}`);
         setProduct(data);
         setHasLoaded(true);
-      } catch(err) {
-        // console.log(err)
-      }
+      } catch(err) {}
     };
 
     setHasLoaded(false);

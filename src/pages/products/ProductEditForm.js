@@ -43,16 +43,13 @@ function ProductEditForm() {
             const {name, description, link, location, price, category_type, image, is_owner} = data;
 
             is_owner ? setProductData({name, description, link, location, price, category_type, image}) : history.push('/');
-        } catch(err) {
-            // console.log(err);
-        }
+        } catch(err) {}
     };
 
     handleMount();
   }, [history, id]);
 
   const handleChange = (event) => {
-    // console.log(event)
     setProductData({
       ...productData,
       [event.target.name]: event.target.value,
@@ -88,7 +85,6 @@ function ProductEditForm() {
       await axiosReq.put(`/products/${id}/`, formData);
       history.push(`/products/${id}/`);
     } catch (err) {
-      // console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }
