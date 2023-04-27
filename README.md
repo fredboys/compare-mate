@@ -24,14 +24,14 @@ Compare mate is a photo sharing platform where users can see deals on products t
     * [Image Carousel](#image-carousel)
     * [Feed Page](#feed)
     * [Favourite Page](#favourite)
+    * [Trending Products](#trending-products)
+    * [Filter](#filter)
     * [Profile](#profile)
     * [Add Product](#add-product)
     * [Product Page](#product-page)
     * [Up Vote](#up-vote)
     * [Favourite button](#favourite-button)
     * [Comment](#comment)
-    * [Trending Products](#tranding-products)
-    * [Filter](#filter)
     * [404 Page](#404-page)
     * [Future Features](#future-features)
 * [Testing](#testing)
@@ -188,9 +188,117 @@ This is the contact form page. From here users are given 2 simple inputs for the
 
 ## Image carousel
 
-This is a image carousel. This displays the top 6 trending products across the site. They are determined by the amount of votes they have recieved on their post.
+This is a image carousel. This displays the top 6 trending products across the site. They are determined by the amount of votes they have recieved on their post. Its an autoplay feature and gives the user a good idea of what to expect when using the site 
 
 ![Image carousel](/readme/carousel-feature.jpg)
+
+## Feed
+
+This is the feed page. Here users can browse all the products that other users have posted. They're met with a clean and simple design for easy naviagtion. Users can see who posted the product and at what date. They have a filter by keyword and category section. A trending product section and finally the product section. Here the users can find details about the product.
+
+![Feed page](/readme/feed-feature.jpg)
+
+## Favourite
+
+This is the favourite page. This has exactly the same layout as the feed page however, the products the user can see here is the ones they have favourited from the feed page. The user can save products they might want to come back to later if they're interested in the post.
+
+![Favourite page](/readme/favourite-feature.jpg)
+
+## Trending products
+
+This is the trending products section. The trending products are determined by how many votes they have recieved on their post. The user can see the top 10 highest voted products. The updates will change every refresh and this gives the user a nice experience as its not constantly updating until they refresh. This user can go directly to the product page of the post to see more details by clicking the image. 
+
+![Trending products](/readme/trending-feature.jpg)
+
+This is the trending products on smaller screen sizes. The user can now only see the top 3 highest voted products.
+
+![Trending product mobile](/readme/trendingmobile-feature.jpg)
+
+## Filter
+
+This is the filter feature. Here users can filter the product posts by writing inputs in the search by keyword bar. Here they can search by "name", "description" and "category". Only posts with the entered inputs will show. Users can also search by category using the dropdown menu. The two filter searches work together so users can get detailted filters if they want.
+
+![Filter feature](/readme/filter-feature.png)
+
+## Profile
+
+This is the profile page. Users get stats about their posts. They can see how many products they have posted. How many votes they have recieved across all of their posts. And finally how many favourites they have recieved across all of their posts. Users can also upload their own profile picture for other users to see. They can also create a bio for themselves. With a similar layout to the feed and favourite page they get a list of their products they have posted and also the trending products are visible.
+
+![Profile page](/readme/profile-feature.jpg)
+
+From here users are able to update their profile, username and password using the three dots.
+
+![Edit profile](/readme/editprofile-feature.png)
+
+## Add product
+
+This is where users can create product posts. They can upload an image of their choice and have several inputs to enter for the details of the product. These consist of: name, description, link, location, price and category. Users will get error messsages if inputed incorrectly. 
+
+![Add product](/readme/adddproduct-feature.jpg)
+
+## Product page
+
+This is where users can view all details about a post including comments. A user can click on a product image and be taken here. They get a single page just for that individual product. They can also see any comments that have been made and view the count of favourites and votes.
+
+![Product page](/readme/product-feature.jpg)
+
+![Product page comment](/readme/productcommetn-feature.jpg)
+
+If the post belongs to the user they can edit or delete the product from here using the three dots.
+
+![Product edit](/readme/editproduct-feature.png)
+
+## Up Vote
+
+Users can up vote a product to show support and if they think its a good deal. Once a user clicks the button the color will chhange and the count will incremenet by 1.
+
+![up vote button](/readme/upvote-feature.jpg)
+
+Users also get a hover message to let them know what the button will do if they click. 
+
+![message vote](/readme/message-feature.png)
+
+Users cannot upvote their own product
+
+![Own product message](/readme/ownmessage-feature.png)
+
+## Favourite Button
+
+Users can favourite a product to save it if they potentially might want to come back to it later. They can access their "favourite" products from the favourite link in the navbar. Once clicked the colour will change on the button and the count will increment by 1.
+
+![Favourite button](/readme/favouritebutton-feature.jpg)
+
+Users also get a hover message to let them know what the button will do if they click. 
+
+![message favourite](/readme/favouritemessage-feature.png)
+
+Users cant favourite their own posts
+
+![Own message](/readme/ownfavmessage-feature.png)
+
+## Comment
+
+Users can comment on a post which adds great value as it builds a community. The number of comments will be shown next to the comment button.
+
+![Comments button](/readme/comments-feature.jpg)
+
+![Comments form](/readme/commentform-feature.jpg)
+
+Users can edit or delete their comment from the three dots
+
+![comment edit](/readme/commentedit-feature.png)
+
+## 404 Page
+
+If a user enters an incorrect URL they will be shown a 404 Page tolet them know they've gone wrong.
+
+![404 Page](/readme/404-feature.jpg)
+
+## Future Features
+
+* In the future I would like to introduce a filter search by price so users could shop within their budget
+
+* I would like to introduce a saving percentage caluculator. On each product post it would display how much they are saving compared to the original price.
 
 # Testing
 
@@ -371,7 +479,7 @@ I manually tested all buttons, forms and links to make sure the correct action t
 
 # Security Features
 
-* Users can not deduce any urls that is not related to their profile. They will get a custom 404 Not Found page.
+* Users can not deduce any urls that is not related to their profile. They will get a custom 404 Not Found page or be redirected to the honme page.
 
 * Error messages for incorrect inputs on product create form
 
