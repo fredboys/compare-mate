@@ -507,6 +507,8 @@ There are no current bugs I have found at the time of testing
     * Package manager used to install dependencies
 * Eslint
     * Linting tool used in order to check best practice coding standards
+* JSHint
+    * Used to test JS files
 * Heroku
     * Used for application hosting
 * ReactBootstrap
